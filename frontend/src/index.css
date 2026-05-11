@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0b1222;
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-solar-400 hover:bg-solar-300 text-slate-950 font-display font-bold rounded-xl transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-solar-400/20;
+    font-weight: 700;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-white/20 hover:border-solar-400/50 bg-white/5 hover:bg-white/10 text-white font-display rounded-xl transition-all duration-200 hover:scale-[1.03] active:scale-[0.98];
+    font-weight: 600;
+  }
+
+  .card {
+    @apply bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white/8 border border-white/15 rounded-2xl shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-solar-300 to-solar-500 bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply text-sm font-display font-medium text-slate-400 hover:text-solar-300 transition-colors duration-200;
+    font-weight: 600;
+  }
+
+  .nav-link-active {
+    @apply text-sm font-display text-solar-400;
+    font-weight: 700;
+  }
+
+  .stat-card {
+    @apply card p-6 flex flex-col gap-2 transition-all duration-300 hover:border-solar-400/30 hover:bg-solar-400/5;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-solar-400/60 focus:bg-white/8 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(251, 191, 36, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(251, 191, 36, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .glow-solar {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.15), 0 0 80px rgba(251, 191, 36, 0.05);
+  }
+
+  .glow-border {
+    box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.3);
+  }
+
+  .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Drag and drop zone */
+.drop-zone {
+  transition: all 0.25s ease;
+}
+.drop-zone.dragging {
+  border-color: rgba(251, 191, 36, 0.6);
+  background-color: rgba(251, 191, 36, 0.05);
+}
+
+/* Loading shimmer */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+  background-size: 400px 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* Sun ray animation */
+@keyframes sunRay {
+  0%, 100% { transform: rotate(0deg) scaleX(1); opacity: 0.6; }
+  50% { transform: rotate(180deg) scaleX(1.1); opacity: 1; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(251, 191, 36, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(251, 191, 36, 0.5); }
