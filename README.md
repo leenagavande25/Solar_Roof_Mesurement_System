@@ -7,7 +7,7 @@ No paid APIs. No credit card required. Works immediately.
 Frontend  →  Leaflet map (free tiles) + Nominatim geocoding
 Backend   →  FastAPI + OpenCV + pvlib (shadow analysis)
 ```
-.
+
 ---
 
 ## Project Structure
